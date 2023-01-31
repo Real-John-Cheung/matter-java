@@ -8,6 +8,7 @@
 
 plugins {
     // Apply the java-library plugin for API and implementation separation.
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
     id 'java-library'
 }
 
@@ -25,4 +26,20 @@ dependencies {
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.guava:guava:30.0-jre'
+}
+
+version = '0.0.0'
+
+tasks.named('jar') {
+    manifest {
+        attributes('Implementation-Title': project.name,
+                   'Implementation-Version': project.version)
+    }
+}
+
+shadowJar {
+   archiveBaseName.set('matter')
+   archiveClassifier.set('')
+   archiveVersion.set('')
+   minimize()
 }

@@ -1,0 +1,1 @@
+cd ./lib/src/main/java && javadoc -d ../../../../docs/api -sourcepath ./ matter
