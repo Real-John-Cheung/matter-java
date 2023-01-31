@@ -1,1 +1,1 @@
-gradle clean shadowJar && rm docs/lib/*  && cp lib/build/libs/matter.jar docs/lib/
+gradle clean shadowJar --debug && rm docs/lib/*  && cp lib/build/libs/matter.jar docs/lib/
