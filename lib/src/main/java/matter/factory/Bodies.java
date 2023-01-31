@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import matter.Common;
+import matter.core.Common;
 import matter.body.Body;
 import matter.geometry.Bounds;
 import matter.geometry.Vector;

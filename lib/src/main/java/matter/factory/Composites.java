@@ -3,7 +3,7 @@ package matter.factory;
 import matter.body.Composite;
 import matter.constraint.Constraint;
 import matter.geometry.Vector;
-import matter.Common;
+import matter.core.Common;
 import matter.body.Body;
 
 import java.util.ArrayList;

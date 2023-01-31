@@ -1,4 +1,4 @@
-package matter;
+package matter.core;
 
 import java.util.ArrayList;
 import java.util.HashMap;

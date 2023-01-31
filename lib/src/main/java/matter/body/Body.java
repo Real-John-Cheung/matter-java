@@ -5,7 +5,7 @@ import matter.geometry.Vertices;
 import matter.geometry.Vertices.Chamfer;
 import matter.geometry.Bounds;
 import matter.geometry.Axes;
-import matter.Common;
+import matter.core.Common;
 import matter.collision.Collision;
 import matter.collision.Collision.CollisionFilter;
 

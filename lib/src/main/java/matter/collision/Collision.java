@@ -3,7 +3,7 @@ package matter.collision;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import matter.Common;
+import matter.core.Common;
 import matter.body.Body;
 import matter.geometry.Vertices.Vertex;
 import matter.geometry.Vector;

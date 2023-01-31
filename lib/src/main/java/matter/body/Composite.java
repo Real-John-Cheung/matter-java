@@ -6,13 +6,13 @@ import java.util.HashMap;
 import java.util.Objects;
 import java.util.function.Consumer;
 
-import matter.Common;
+import matter.core.Common;
 import matter.constraint.Constraint;
 import matter.constraint.MouseConstraint;
 import matter.geometry.Bounds;
 import matter.geometry.Vector;
 import matter.geometry.Vertices.Vertex;
-import matter.Events;
+import matter.core.Events;
 
 /**
  * 

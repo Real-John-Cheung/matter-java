@@ -2,7 +2,7 @@ package matter.collision;
 
 import java.util.ArrayList;
 
-import matter.Common;
+import matter.core.Common;
 import matter.body.Body;
 import matter.geometry.Bounds;
 import matter.geometry.Vector;

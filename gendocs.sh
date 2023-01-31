@@ -1,1 +1,1 @@
-cd ./lib/src/main/java && javadoc -d ../../../../docs/api -sourcepath ./ matter
+cd ./lib/src/main/java/matter && javadoc Matter.java -d ../../../../../docs/api -subpackages core:body:collision:constraint:factory:geometry

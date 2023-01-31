@@ -1,4 +1,4 @@
-package matter;
+package matter.core;
 
 import matter.body.Body;
 import matter.collision.Collision;

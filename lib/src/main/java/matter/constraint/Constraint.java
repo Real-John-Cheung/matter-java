@@ -2,13 +2,13 @@ package matter.constraint;
 
 import java.util.HashMap;
 
-import matter.Common;
+import matter.core.Common;
 import matter.body.Body;
 import matter.geometry.Vector;
 import matter.geometry.Vertices;
 import matter.geometry.Axes;
 import matter.geometry.Bounds;
-import matter.Sleeping;
+import matter.core.Sleeping;
 
 /**
  * contains methods for creating and manipulating constraints

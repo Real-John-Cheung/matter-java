@@ -1,7 +1,7 @@
 package matter.geometry;
 
 import matter.body.Body;
-import matter.Common;
+import matter.core.Common;
 
 import java.util.ArrayList;
 import java.util.Arrays;
