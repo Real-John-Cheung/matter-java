@@ -42,7 +42,7 @@ public class Collision {
         }
 
         public CollisionFilter(HashMap<String, Object> options) {
-            this.category = (Byte) Common.parseOption(options, "category", 0x0001);
+            this.category = (Byte) Common.parseOption(options, "category", (byte) 1);
             this.mask = (Integer) Common.parseOption(options, "mask", 0xFFFFFFFF);
             this.group = (Integer) Common.parseOption(options, "group", 0);
         }

@@ -114,7 +114,7 @@ public class Constraint {
         this.label = (String) Common.parseOption(options, "label", "Constraint");
         this.pointA = (Vector) Common.parseOption(options, "pointA", null);
         this.pointB = (Vector) Common.parseOption(options, "pointB", null);
-        this.damping = (Double) Common.parseOption(options, "damping", 0);
+        this.damping = (Double) Common.parseOption(options, "damping", 0d);
         this.plugin = (HashMap<String, Object>) Common.parseOption(options, "plugin", null);
 
         if (this.bodyA != null && this.pointA == null) {
@@ -129,10 +129,10 @@ public class Constraint {
         Vector initialPointB = this.bodyB != null ? Vector.add(this.bodyB.position, this.pointB) : this.pointB;
         double length = Vector.magnitude(Vector.sub(initialPointA, initialPointB));
         this.length = (Double) Common.parseOption(options, "length", length);
-        this.stiffness = (Double) Common.parseOption(options, "stiffness", this.length > 0 ? 1 : 0.7);
-        this.angularStiffness = (Double) Common.parseOption(options, "angularStiffness", 0);
-        this.angleA = this.bodyA != null ? this.bodyA.angle : (Double) Common.parseOption(options, "angleA", 0);
-        this.angleB = this.bodyB != null ? this.bodyB.angle : (Double) Common.parseOption(options, "angleB", 0);
+        this.stiffness = (Double) Common.parseOption(options, "stiffness", this.length > 0 ? 1d : 0.7d);
+        this.angularStiffness = (Double) Common.parseOption(options, "angularStiffness", 0d);
+        this.angleA = this.bodyA != null ? this.bodyA.angle : (Double) Common.parseOption(options, "angleA", 0d);
+        this.angleB = this.bodyB != null ? this.bodyB.angle : (Double) Common.parseOption(options, "angleB", 0d);
     }
     
     /**

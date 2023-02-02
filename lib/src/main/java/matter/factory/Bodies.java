@@ -351,7 +351,7 @@ public class Bodies {
         }
 
         for (int i = 0; i < parts_position.size(); i++) {
-            HashMap<String, Object> temopts = (HashMap<String, Object>) options.clone();
+            HashMap<String, Object> temopts = options == null? new HashMap<String, Object>() : (HashMap<String, Object>) options.clone();
             temopts.put("position", parts_position.get(i));
             temopts.put("vertices", parts_vertices.get(i));
             Body tem = Body.create(temopts);

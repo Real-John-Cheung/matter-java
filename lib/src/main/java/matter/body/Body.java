@@ -205,33 +205,33 @@ public class Body {
         this.label = (String) Common.parseOption(options, "label", "Body");
         this.parts = (ArrayList<Body>) Common.parseOption(options, "parts", new ArrayList<Body>());
         this.plugin = (HashMap<String, Object>) Common.parseOption(options, "plugin", null);
-        this.angle = (Double) Common.parseOption(options, "angle", 0);
+        this.angle = (Double) Common.parseOption(options, "angle", 0d);
         this.vertices = (Vertices.Vertex[]) Common.parseOption(options, "vertices",
                 Vertices.fromPath("L 0 0 L 40 0 L 40 40 L 0 40", this));
         this.position = (Vector) Common.parseOption(options, "position", new Vector());
         this.force = (Vector) Common.parseOption(options, "position", new Vector());
-        this.torque = (Double) Common.parseOption(options, "torque", 0);
+        this.torque = (Double) Common.parseOption(options, "torque", 0d);
         this.positionImpulse = new Vector();
         this.constraintImpulse = new double[] {0, 0, 0};
         this.totalContacts = 0;
-        this.speed = (Double) Common.parseOption(options, "speed", 0);
-        this.angularSpeed = (Double) Common.parseOption(options, "angularSpeed", 0);
+        this.speed = (Double) Common.parseOption(options, "speed", 0d);
+        this.angularSpeed = (Double) Common.parseOption(options, "angularSpeed", 0d);
         this.velocity = (Vector) Common.parseOption(options, "velocity", new Vector());
-        this.angularVelocity = (Double) Common.parseOption(options, "angularVelocity", 0);
+        this.angularVelocity = (Double) Common.parseOption(options, "angularVelocity", 0d);
         this.isSensor = (Boolean) Common.parseOption(options, "isSensor", false);
         this.isStatic = (Boolean) Common.parseOption(options, "isStatic", false);
         this.isSleeping = (Boolean) Common.parseOption(options, "isSleeping", false);
         this.motion = 0;
         this.sleepThreshold = (Integer) Common.parseOption(options, "sleepThreshold", 60);
-        this.density = (Double) Common.parseOption(options, "density", 0.001);
-        this.restitution = (Double) Common.parseOption(options, "restitution", 0);
+        this.density = (Double) Common.parseOption(options, "density", 0.001d);
+        this.restitution = (Double) Common.parseOption(options, "restitution", 0d);
         this.friction = (Double) Common.parseOption(options, "friction", 0.1);
-        this.frictionStatic = (Double) Common.parseOption(options, "frictionStatic", 0.5);
-        this.frictionAir = (Double) Common.parseOption(options, "frictionAir", 0.01);
+        this.frictionStatic = (Double) Common.parseOption(options, "frictionStatic", 0.5d);
+        this.frictionAir = (Double) Common.parseOption(options, "frictionAir", 0.01d);
         this.collisionFilter = (Collision.CollisionFilter) Common.parseOption(options, "collisionFilter",
                 new Collision.CollisionFilter(null));
-        this.slop = (Double) Common.parseOption(options, "slop", 0.05);
-        this.timeScale = (Double) Common.parseOption(options, "timeScale", 1);
+        this.slop = (Double) Common.parseOption(options, "slop", 0.05d);
+        this.timeScale = (Double) Common.parseOption(options, "timeScale", 1d);
         // this.render
         this.events = null;
         this.bounds = (Bounds) Common.parseOption(options, "bounds", null);
