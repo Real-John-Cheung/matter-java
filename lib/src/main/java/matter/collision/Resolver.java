@@ -221,6 +221,8 @@ public class Resolver {
             bodyB.angularVelocity = bodyB.angle - bodyB.anglePrev;
             for (int j = 0; j < contactsLength; j++) {
                 Contact contact = contacts.get(j);
+                if (contact == null)
+                    continue;
                 Vertex contactVertex = contact.vertex;
                 double offsetAX = contactVertex.x - bodyA.position.x,
                         offsetAY = contactVertex.y - bodyA.position.y,

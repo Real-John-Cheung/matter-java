@@ -34,6 +34,8 @@ public class Axes {
      * @param angle angle
      */
     static public void rotate(Vector[] axes, double angle) {
+        if (axes == null)
+            return;
         if (angle == 0)
             return;
         double cos = Math.cos(angle);

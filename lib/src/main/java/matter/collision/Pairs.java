@@ -101,6 +101,8 @@ public class Pairs {
 
         for (int i = 0; i < removePairIndex.size(); i++) {
             pairIndex = removePairIndex.get(i);
+            if (pairIndex > pairsList.size() - 1)
+                continue;
             pair = pairsList.get(pairIndex);
             pairsList.remove(pairIndex);
             pairsTable.remove(pair.id);

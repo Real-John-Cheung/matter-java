@@ -101,12 +101,17 @@ public class Pair {
 
         for (int i = 0; i < supports.size(); i++) {
             Vertex support = supports.get(i);
+            if (support == null)
+                continue;
             int contactId = support.body == parentA ? support.index : parentAVerticesLength + support.index;
-            Contact contact = contacts.get(contactId);
+            Contact contact = contactId > contacts.size() - 1 ? null : contacts.get(contactId);
             if (contact != null) {
                 activeContacts.add(contact);
             } else {
                 Contact tem = Contact.create(support);
+                while (contacts.size() < contactId + 1) {
+                    contacts.add(null);
+                }
                 contacts.set(contactId, tem);
                 activeContacts.add(tem);
             }

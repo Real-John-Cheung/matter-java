@@ -315,6 +315,8 @@ public class Body {
         if (body.parent == null)
             body.parent = body;
         //
+        if (body.axes == null)
+            body.axes = Axes.fromVertices(body.vertices);
         Vertices.rotate(body.vertices, body.angle, body.position);
         Axes.rotate(body.axes, body.angle);
         Bounds.update(body.bounds, body.vertices, body.velocity);

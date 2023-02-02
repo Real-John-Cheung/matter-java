@@ -15,8 +15,8 @@ import matter.geometry.Vertices;
 public class Collision {
 
     private static Vertex[] _supports = new Vertex[2];
-    private static HashMap<String, Object> _overlapAB = Common.opts("overlap", 0, "axis", null);
-    private static HashMap<String, Object> _overlapBA = Common.opts("overlap", 0, "axis", null);
+    private static HashMap<String, Object> _overlapAB = Common.opts("overlap", 0d, "axis", null);
+    private static HashMap<String, Object> _overlapBA = Common.opts("overlap", 0d, "axis", null);
 
     /**
      * class for collisionFilter object
@@ -221,12 +221,17 @@ public class Collision {
 
         Vertex[] supportsB = Collision._findSupports(bodyA, bodyB, normal, 1);
         int supportCount = 0;
-
         if (Vertices.contains(bodyA.vertices, supportsB[1])) {
+            while (supports.size() < supportCount + 1) {
+                supports.add(null);
+            }
             supports.set(supportCount++, supportsB[0]);
         }
 
         if (Vertices.contains(bodyA.vertices, supportsB[1])) {
+            while (supports.size() < supportCount + 1) {
+                supports.add(null);
+            }
             supports.set(supportCount++, supportsB[1]);
         }
 
@@ -234,15 +239,24 @@ public class Collision {
             var supportsA = Collision._findSupports(bodyB, bodyA, normal, -1);
 
             if (Vertices.contains(bodyB.vertices, supportsA[0])) {
+                while (supports.size() < supportCount + 1) {
+                    supports.add(null);
+                }
                 supports.set(supportCount++, supportsA[0]);
             }
 
             if (supportCount < 2 && Vertices.contains(bodyB.vertices, supportsA[1])) {
+                while (supports.size() < supportCount + 1) {
+                    supports.add(null);
+                }
                 supports.set(supportCount++, supportsA[1]);
             }
         }
 
         if (supportCount == 0) {
+            while (supports.size() < supportCount + 1) {
+                supports.add(null);
+            }
             supports.set(supportCount++, supportsB[0]);
         }
 
@@ -250,7 +264,7 @@ public class Collision {
             supports.remove(supports.size() - 1);
         }
 
-        while (supports.size() < supportCount) {
+        while (supports.size() < supportCount + 1) {
             supports.add(null);
         }
 
@@ -371,10 +385,10 @@ public class Collision {
         if (normalX * (bodyAPositionX - vertexB.x) + normalY * (bodyAPositionY - vertexB.y) < nearestDistance) {
             _supports[0] = vertexA;
             _supports[1] = vertexB;
-            return _supports;
+            return _supports.clone();
         }
         _supports[0] = vertexA;
         _supports[1] = vertexC;
-        return _supports;
+        return _supports.clone();
     }
 }
