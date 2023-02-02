@@ -235,7 +235,7 @@ public class Body {
         // this.render
         this.events = null;
         this.bounds = (Bounds) Common.parseOption(options, "bounds", null);
-        this.chamfer = (Chamfer) options.getOrDefault("chamfer", null);
+        this.chamfer = (Chamfer) Common.parseOption(options, "chamfer", null);
         this.circleRadius = 0;
         this.positionPrev = null;
         this.anglePrev = 0;

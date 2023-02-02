@@ -3,6 +3,8 @@ package matter.collision;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import matter.core.Common;
+
 /**
  * methods for creating and manipulating collision pair sets
  * 
@@ -19,11 +21,11 @@ public class Pairs {
 
     @SuppressWarnings("unchecked")
     public Pairs(HashMap<String, Object> options) {
-        this.table = (HashMap<String, Pair>) options.getOrDefault("table", new HashMap<String, Pair>());
-        this.list = (ArrayList<Pair>) options.getOrDefault("list", new ArrayList<Pair>());
-        this.collisionStart = (ArrayList<Pair>) options.getOrDefault("collisionStart", new ArrayList<Pair>());
-        this.collisionActive = (ArrayList<Pair>) options.getOrDefault("collisionActive", new ArrayList<Pair>());
-        this.collisionEnd = (ArrayList<Pair>) options.getOrDefault("collisionEnd", new ArrayList<Pair>());
+        this.table = (HashMap<String, Pair>) Common.parseOption(options, "table", new HashMap<String, Pair>());
+        this.list = (ArrayList<Pair>) Common.parseOption(options, "list", new ArrayList<Pair>());
+        this.collisionStart = (ArrayList<Pair>) Common.parseOption(options, "collisionStart", new ArrayList<Pair>()); 
+        this.collisionActive = (ArrayList<Pair>) Common.parseOption(options, "collisionActive", new ArrayList<Pair>()); 
+        this.collisionEnd = (ArrayList<Pair>) Common.parseOption(options, "collisionEnd", new ArrayList<Pair>());
 
     }
 

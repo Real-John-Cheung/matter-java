@@ -50,7 +50,7 @@ public class Bodies {
         // options.put("vertices",
         // Vertices.fromPath("L 0 0 L " + width + " 0 L " + width + " " + height + " L 0
         // " + height, null));
-        Chamfer chamfer = (Chamfer) options.getOrDefault("chamfer", null);
+        Chamfer chamfer = (Chamfer) Common.parseOption(options, "chamfer", null);
         if (chamfer != null)
             options.remove("chamfer");
         Body body = new Body(options);
@@ -108,7 +108,7 @@ public class Bodies {
         if (options.get("label") == null)
             options.put("label", "Trapezoid Body");
         options.put("position", new Vector(x, y));
-        Chamfer chamfer = (Chamfer) options.getOrDefault("chamfer", null);
+        Chamfer chamfer = (Chamfer) Common.parseOption(options, "chamfer", null);
         if (chamfer != null)
             options.remove("chamfer");
         Body body = new Body(options);
@@ -209,7 +209,7 @@ public class Bodies {
             options.put("label", "Polygon Body");
         options.put("position", new Vector(x, y));
 
-        Chamfer chamfer = (Chamfer) options.getOrDefault("chamfer", null);
+        Chamfer chamfer = (Chamfer) Common.parseOption(options, "chamfer", null);
 
         if (chamfer != null) {
             options.remove("chamfer");

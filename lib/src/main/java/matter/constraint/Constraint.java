@@ -107,15 +107,15 @@ public class Constraint {
      */
     @SuppressWarnings("unchecked")
     public Constraint(HashMap<String, Object> options) {
-        this.bodyA = (Body) options.getOrDefault("bodyA", null);
-        this.bodyB = (Body) options.getOrDefault("bodyA", null);
-        this.id = (Integer) options.getOrDefault("id", Common.nextId());
+        this.bodyA = (Body) Common.parseOption(options, "bodyA", null);
+        this.bodyB = (Body) Common.parseOption(options, "bodyA", null);
+        this.id = (Integer) Common.parseOption(options, "id", Common.nextId());
         this.type = "constraint";
-        this.label = (String) options.getOrDefault("label", "Constraint");
-        this.pointA = (Vector) options.getOrDefault("pointA", null);
-        this.pointB = (Vector) options.getOrDefault("pointB", null);
-        this.damping = (Double) options.getOrDefault("damping", 0);
-        this.plugin = (HashMap<String, Object>) options.getOrDefault("plugin", null);
+        this.label = (String) Common.parseOption(options, "label", "Constraint");
+        this.pointA = (Vector) Common.parseOption(options, "pointA", null);
+        this.pointB = (Vector) Common.parseOption(options, "pointB", null);
+        this.damping = (Double) Common.parseOption(options, "damping", 0);
+        this.plugin = (HashMap<String, Object>) Common.parseOption(options, "plugin", null);
 
         if (this.bodyA != null && this.pointA == null) {
             this.pointA = new Vector();
@@ -128,11 +128,11 @@ public class Constraint {
         Vector initialPointA = this.bodyA != null ? Vector.add(this.bodyA.position, this.pointA) : this.pointA;
         Vector initialPointB = this.bodyB != null ? Vector.add(this.bodyB.position, this.pointB) : this.pointB;
         double length = Vector.magnitude(Vector.sub(initialPointA, initialPointB));
-        this.length = (Double) options.getOrDefault("length", length);
-        this.stiffness = (Double) options.getOrDefault("stiffness", this.length > 0 ? 1 : 0.7);
-        this.angularStiffness = (Double) options.getOrDefault("angularStiffness", 0);
-        this.angleA = this.bodyA != null ? this.bodyA.angle : (Double) options.getOrDefault("angleA", 0);
-        this.angleB = this.bodyB != null ? this.bodyB.angle : (Double) options.getOrDefault("angleB", 0);
+        this.length = (Double) Common.parseOption(options, "length", length);
+        this.stiffness = (Double) Common.parseOption(options, "stiffness", this.length > 0 ? 1 : 0.7);
+        this.angularStiffness = (Double) Common.parseOption(options, "angularStiffness", 0);
+        this.angleA = this.bodyA != null ? this.bodyA.angle : (Double) Common.parseOption(options, "angleA", 0);
+        this.angleB = this.bodyB != null ? this.bodyB.angle : (Double) Common.parseOption(options, "angleB", 0);
     }
     
     /**

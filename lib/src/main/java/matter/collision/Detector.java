@@ -7,6 +7,7 @@ import java.util.HashMap;
 
 import matter.body.Body;
 import matter.geometry.Bounds;
+import matter.core.Common;
 
 /**
  * methods for efficiently detecting collisions between a list of bodies
@@ -30,8 +31,8 @@ public class Detector {
 
     @SuppressWarnings("unchecked")
     public Detector(HashMap<String, Object> options) {
-        this.bodies = (ArrayList<Body>) options.getOrDefault("bodies", new ArrayList<Body>());
-        this.pairs = (Pairs) options.getOrDefault("pairs", null);
+        this.bodies = (ArrayList<Body>) Common.parseOption(options, "bodies", new ArrayList<Body>());
+        this.pairs = (Pairs) Common.parseOption(options, "pairs", null);
     }
 
     /**

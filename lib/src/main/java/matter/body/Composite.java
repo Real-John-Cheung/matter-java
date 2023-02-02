@@ -88,7 +88,7 @@ public class Composite {
     public Composite(HashMap<String, Object> options) {
         this.id = Common.nextId();
         this.type = "composite";
-        this.parent = (Composite) options.getOrDefault("parent", null);
+        this.parent = (Composite) Common.parseOption(options, "parent", null);
         this.isModified = false;
         this.bodies = new ArrayList<Body>();
         Object opBods = options.get("bodies");
@@ -117,8 +117,8 @@ public class Composite {
                 this.composites.addAll(Arrays.asList((Composite[]) opComs));
             }
         }
-        this.label = (String) options.getOrDefault("label", "Composite");
-        this.plugin = (HashMap<String, Object>) options.getOrDefault("plugin", null);
+        this.label = (String) Common.parseOption(options, "label", "Composite");
+        this.plugin = (HashMap<String, Object>) Common.parseOption(options, "plugin", null);
         this.chache = new HashMap<String, Object>();
         this.chache.put("allBodies", null);
         this.chache.put("allConstraints", null);

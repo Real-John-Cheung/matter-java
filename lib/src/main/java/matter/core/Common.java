@@ -47,6 +47,7 @@ public class Common {
      * @return
      */
     static public Object parseOption(HashMap<String, Object> options, String key, Object defaultV) {
+        if (options == null) return defaultV;
         return options.getOrDefault(key, defaultV);
     }
 

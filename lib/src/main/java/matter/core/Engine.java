@@ -102,27 +102,27 @@ public class Engine {
      */
     @SuppressWarnings("unchecked")
     public Engine(HashMap<String, Object> options) {
-        this.positionIterations = (Integer) options.getOrDefault("positionIterations", 6);
-        this.velocityIterations = (Integer) options.getOrDefault("velocityIterations", 4);
-        this.constraintIterations = (Integer) options.getOrDefault("constraintIterations", 2);
-        this.enableSleeping = (Boolean) options.getOrDefault("enableSleeping", false);
+        this.positionIterations = (Integer) Common.parseOption(options, "positionIterations", 6);
+        this.velocityIterations = (Integer) Common.parseOption(options, "velocityIterations", 4);
+        this.constraintIterations = (Integer) Common.parseOption(options, "constraintIterations", 2);
+        this.enableSleeping = (Boolean) Common.parseOption(options, "enableSleeping", false);
         this.events = new HashMap<>();
-        this.plugin = (HashMap<String, Object>) options.getOrDefault("plugin", null);
+        this.plugin = (HashMap<String, Object>) Common.parseOption(options, "plugin", null);
         HashMap<String, Double> defaultGravity = new HashMap<String, Double>();
         defaultGravity.put("x", 0d);
         defaultGravity.put("y", 1d);
         defaultGravity.put("scale", 0.001);
-        this.gravity = (HashMap<String, Double>) options.getOrDefault("gravity", defaultGravity);
+        this.gravity = (HashMap<String, Double>) Common.parseOption(options, "gravity", defaultGravity);
         HashMap<String, Double> defaultTiming = new HashMap<String, Double>();
         defaultTiming.put("timestamp", 0d);
         defaultTiming.put("timeScale", 1d);
         defaultTiming.put("lastDelta", 0d);
         defaultTiming.put("lastElapsed", 0d);
-        this.timing = (HashMap<String, Double>) options.getOrDefault("timing", defaultTiming);
+        this.timing = (HashMap<String, Double>) Common.parseOption(options, "timing", defaultTiming);
 
-        this.world = (Composite) options.getOrDefault("world", Composite.create(Common.opts("label", "World")));
-        this.pairs = (Pairs) options.getOrDefault("pairs", Pairs.create(null));
-        this.detector = (Detector) options.getOrDefault("detector", Detector.create(null));
+        this.world = (Composite) Common.parseOption(options, "world", Composite.create(Common.opts("label", "World")));
+        this.pairs = (Pairs) Common.parseOption(options, "pairs", Pairs.create(null));
+        this.detector = (Detector) Common.parseOption(options, "detector", Detector.create(null));
     }
 
     /**
