@@ -430,10 +430,10 @@ public class Vector {
         return new Vector(vector.x, vector.y);
     }
 
-    /**
-     * temporary vector pool
-     */
-    private Vector[] _temp = new Vector[]{
-        new Vector(), new Vector(), new Vector(), new Vector(),new Vector(), new Vector()
-    };
+    // /**
+    //  * temporary vector pool
+    //  */
+    // private Vector[] _temp = new Vector[]{
+    //     new Vector(), new Vector(), new Vector(), new Vector(),new Vector(), new Vector()
+    // };
 }
